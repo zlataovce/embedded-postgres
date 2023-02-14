@@ -1,11 +1,11 @@
-module github.com/fergusstrange/embedded-postgres/examples
+module github.com/zlataovce/embedded-postgres/examples
 
 go 1.18
 
-replace github.com/fergusstrange/embedded-postgres => ../
+replace github.com/zlataovce/embedded-postgres => ../
 
 require (
-	github.com/fergusstrange/embedded-postgres v0.0.0
+	github.com/zlataovce/embedded-postgres v0.0.0
 	github.com/jmoiron/sqlx v1.3.5
 	github.com/lib/pq v1.10.4
 	github.com/pressly/goose/v3 v3.0.1

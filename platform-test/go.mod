@@ -1,10 +1,10 @@
-module github.com/fergusstrange/embedded-postgres/platform-test
+module github.com/zlataovce/embedded-postgres/platform-test
 
-replace github.com/fergusstrange/embedded-postgres => ../
+replace github.com/zlataovce/embedded-postgres => ../
 
 go 1.18
 
-require github.com/fergusstrange/embedded-postgres v0.0.0
+require github.com/zlataovce/embedded-postgres v0.0.0
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect

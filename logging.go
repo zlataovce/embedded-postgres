@@ -62,7 +62,7 @@ func readLogsOrTimeout(logger *os.File) (logContent []byte, err error) {
 	errChan := make(chan error, 1)
 
 	go func() {
-		if actualLogContent, err := ioutil.ReadFile(logger.Name()); err == nil {
+		if actualLogContent, err := os.ReadFile(logger.Name()); err == nil {
 			logContentChan <- actualLogContent
 		} else {
 			errChan <- err
