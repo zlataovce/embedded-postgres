@@ -2,7 +2,6 @@ package embeddedpostgres
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"testing"
 
@@ -49,7 +48,7 @@ func Test_SyncedLogger_NoErrorDuringFlush(t *testing.T) {
 
 	assert.NoError(t, slErr)
 
-	err := ioutil.WriteFile(sl.file.Name(), []byte("some logs\non a new line"), os.ModeAppend)
+	err := os.WriteFile(sl.file.Name(), []byte("some logs\non a new line"), os.ModeAppend)
 
 	assert.NoError(t, err)
 
@@ -61,7 +60,7 @@ func Test_SyncedLogger_NoErrorDuringFlush(t *testing.T) {
 }
 
 func Test_readLogsOrTimeout(t *testing.T) {
-	logFile, err := ioutil.TempFile("", "prepare_database_test_log")
+	logFile, err := os.CreateTemp("", "prepare_database_test_log")
 	if err != nil {
 		panic(err)
 	}
